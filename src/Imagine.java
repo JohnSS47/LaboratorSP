@@ -1,18 +1,43 @@
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+
+import javax.imageio.ImageIO;
 
 public class Imagine extends AbstractElement {
-	public String imagePath;
-	
-	public Imagine(String imagePath){
-		this.imagePath = imagePath;
-		this.loadData(imagePath);
+	String numeImagine;
+	BufferedImage imagine = null;
+	public Imagine (String numeImagine,String cale){
+		if(cale == null)
+		 {
+	            throw new NullPointerException("Calea nu exista...");
+		 }
+		this.numeImagine=numeImagine;
+		try{
+			
+		this.imagine = ImageIO.read(new File(cale));
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
 	}
 
+
 	public void print() {
-		System.out.println("Showing image from :"+this.imagePath);
+		 System.out.println(numeImagine);
+		
+	}
+
+	public void acceptVisitor(Visitor s) {
+	
+		 s.visitImagine(this);
 	}
 	
-	public void loadData(String path){
-		//Dummy function to act as a data loader.
-	}
+	  public String toString()
+	    {
+	        return numeImagine;
+	    }
 
 }

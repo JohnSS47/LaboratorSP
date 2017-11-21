@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public class Carte {
-
+	
 	private String titlu;
 	private ArrayList<Autor> autori;
-	private ArrayList<ElementPagina> capitole;
+	private ArrayList<Element> capitole;
 	private Cuprins cuprins;
 	
 	public AlignStrategy leftAlign = new LeftAlign();
@@ -14,18 +14,18 @@ public class Carte {
 	public Carte(){
 		this.titlu = "";
 		this.autori = new ArrayList<Autor>();
-		this.capitole = new ArrayList<ElementPagina>();
+		this.capitole = new ArrayList<Element>();
 	}
 	
-	public Carte(String titlu,Cuprins cuprins){
+	public Carte(String titlu,Cuprins cuprins, ArrayList<Autor> autor, ArrayList<Element> capitole){
 		this.titlu = titlu;
-		this.autori = new ArrayList<Autor>();
-		this.capitole = new ArrayList<ElementPagina>();
+		this.autori = autor;
+		this.capitole = capitole;
 		this.cuprins = cuprins;
 	}
 	
 	public void printBook(){
-		for(ElementPagina e : this.capitole){
+		for(Element e : this.capitole){
 			e.print();
 		}
 	}
@@ -46,11 +46,11 @@ public class Carte {
 		this.autori = autori;
 	}
 
-	public ArrayList<ElementPagina> getCapitole() {
+	public ArrayList<Element> getCapitole() {
 		return capitole;
 	}
 
-	public void setCapitole(ArrayList<ElementPagina> capitole) {
+	public void setCapitole(ArrayList<Element> capitole) {
 		this.capitole = capitole;
 	}
 
@@ -61,9 +61,6 @@ public class Carte {
 	public void setCuprins(Cuprins cuprins) {
 		this.cuprins = cuprins;
 	}
-	
-	
-	
-	
+
 
 }

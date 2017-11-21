@@ -1,6 +1,4 @@
 
 public interface AlignStrategy {
-	
-	void printAligned(String text);
-
+	 void printAligned(String text);
 }

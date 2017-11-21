@@ -1,36 +1,66 @@
-/*import java.util.ArrayList;
-
-public class Capitol {
-	private String titlu;
-	private ArrayList<Subcapitol> subCapitole;
+import java.util.*;
+public class Capitol implements Element {
+	String titluCapitol;
 	
-	public Capitol(){
-		this.titlu = "";
-		this.subCapitole = new ArrayList<Subcapitol>();
-	}
+	public ArrayList<Subcapitol> subcapitole = new  ArrayList<Subcapitol>();
 	
-	public Capitol(String titlu){
-		this.titlu = titlu;
-		this.subCapitole = new ArrayList<Subcapitol>();
+
+
+public Capitol(String titluCapitol, ArrayList<Subcapitol> subcapitole) {
+		super();
+		this.titluCapitol = titluCapitol;
+		this.subcapitole = subcapitole;
 	}
+
+
+
+public void print() {
+	System.out.println(titluCapitol);
+}
+
+
+
+public void addElement(Element elem) throws Exception {
 	
-	public void addSubcapitol(Subcapitol subcapitol){
-		this.subCapitole.add(subcapitol);
-	}
+}
 
-	public String getTitlu() {
-		return titlu;
-	}
 
-	public void setTitlu(String titlu) {
-		this.titlu = titlu;
-	}
 
-	public ArrayList<Subcapitol> getSubCapitole() {
-		return subCapitole;
-	}
+public void remove(Element elem) {
+	
+}
 
-	public void setSubCapitole(ArrayList<Subcapitol> subCapitole) {
-		this.subCapitole = subCapitole;
-	}
-}*/
+
+
+public void getChild(int index) {
+
+}
+
+
+
+public void acceptVisitor(Visitor s) {
+	
+}
+
+
+public void getElement(int index) {
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
